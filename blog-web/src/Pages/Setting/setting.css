@@ -1,0 +1,90 @@
+.setting{
+    display: flex;
+}
+
+.settingWrapper{
+    flex:9;
+    padding: 20px;
+}
+
+.settingTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settingTitleUpdate{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: lightcoral;
+}
+
+.settingTitleDelete{
+    color: red;
+    cursor: pointer;
+}
+
+.settingForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.settingPP{
+    display: flex;
+    align-items: center;
+    margin:10px 0;
+}
+
+.settingPP > img {
+    height: 70px;
+    width: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.settingPPIcon{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    color: white;
+    background-color: lightcoral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.settingForm > label {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.settingPPInput {
+    width: 30%;
+}
+
+.settingForm > input {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin:10px 0;
+    height: 30px;
+}
+
+.settingButton{
+    background-color: teal;
+    padding:10px;
+    color: white;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.settingButton:hover {
+    background-color: rgb(1, 114, 114);
+  }

@@ -1,0 +1,78 @@
+.post{
+    width: 385px;
+    margin: 0px 25px 40px 25px;
+}
+
+.postImg{
+    width: 100%;
+    height: 280px;
+    border-radius: 7px;
+    object-fit: cover;
+}
+
+.postInfo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.postCat{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12px;
+    margin-right: 10px;
+    margin-top: 12px;
+    line-height: 20px;
+    color: #be9656;
+    cursor: pointer;
+}
+
+.postTitle{
+    margin-top: 15px;
+    font-family:"Josefin Sans", sans-serif ;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.postDate{
+    font-style: italic;
+    margin-top: 15px;
+    font-family: "Lora",serif;
+    font-size: 14px;
+    color: gray;
+}
+
+
+/* The Line no 53 to 57 it is for the hidden of the extra content  
+it shows the css of the hiiden desc*/
+.postDesc{
+    color: #444;
+    line-height: 21px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    margin-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    height: 100px;
+    overflow-y: auto;
+}
+
+
+.postDesc::-webkit-scrollbar{
+    width: 10px;
+}
+
+.postDesc::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.postDesc ::-webkit-scrollbar-thumb {
+    background: rgb(107, 165, 252); 
+    border-radius: 10px;
+}
+
+.postDesc::-webkit-scrollbar-thumb:hover {
+    background: rgb(107, 165, 252); 
+}

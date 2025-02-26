@@ -1,0 +1,140 @@
+.singlePost {
+    flex: 9;
+}
+
+.singlePostWrapper {
+    padding: 20px;
+    padding-right: 0;
+}
+
+.singlePostImg {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.singlePostTitle {
+    text-align: center;
+    margin: 10px;
+    font-size: 28px;
+    font-family: "Lora", sans-serif;
+}
+
+.singlePostTitleInput {
+    text-align: center;
+    margin: 10px;
+    font-size: 28px;
+    font-family: "Lora", sans-serif;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    color: gray;
+}
+
+.singlePostTitleInput:focus {
+    outline: none;
+}
+
+.singlePostEdit {
+    float: right;
+    font-size: 15px;
+}
+
+.singlePostIcon {
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.singlePostIcon:first-child {
+    color: teal;
+}
+
+.singlePostInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #be9656;
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+}
+
+.singlePostIcon:last-child {
+    color: red;
+}
+
+.singlePostAuthor {
+    margin-left: 5px;
+}
+
+.singlePostDesc {
+    line-height: 25px;
+    font-size: 15px;
+    color: #666;
+}
+
+.singlePostDescInput {
+    border: none;
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+    width: 100%;
+    height: 180px;
+}
+
+.singlePostDescInput::-webkit-scrollbar{
+    width: 13px;
+}
+
+.singlePostDescInput::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.singlePostDescInput ::-webkit-scrollbar-thumb {
+    background: rgb(107, 165, 252); 
+    border-radius: 10px;
+}
+
+.singlePostDescInput::-webkit-scrollbar-thumb:hover {
+    background: rgb(107, 165, 252); 
+}
+
+.singlePostDescInput:focus {
+    outline: none;
+}
+
+.singlePostDesc::first-letter {
+    margin-left: 24px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.singlePostBtn{
+    background-color: teal;
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+.settingPPInput {
+    width: 30%;
+}
+
+.settingPPIcon{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    color: white;
+    background-color: lightcoral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}

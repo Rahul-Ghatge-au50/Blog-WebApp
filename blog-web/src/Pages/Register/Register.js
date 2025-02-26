@@ -8,11 +8,12 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const BASE_URL = 'https://blog-webapp-2qd6.onrender.com';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://blog-webapp-2qd6.onrender.com/api/auth/register', {
+      const res = await axios.post(`${BASE_URL}/api/auth/register`, {
         username, email, password
       });
       res.data && window.location.replace('/login');

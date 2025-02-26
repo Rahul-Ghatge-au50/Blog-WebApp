@@ -41,9 +41,9 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
 
 
 //MIDDLEWARE
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
 app.use('/images', express.static(path.join(__dirname, "/images")))
 
 

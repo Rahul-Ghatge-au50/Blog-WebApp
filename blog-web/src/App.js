@@ -14,35 +14,56 @@ import { Context } from './Context/Context';
 
 
 
+// function App() {
+
+//   const {user} = useContext(Context);
+  
+//   const routers = createBrowserRouter(
+
+//     createRoutesFromElements(
+//       <Route path='/' element={<Register />}>
+//         <Route index element={<Home />} />
+//         <Route path='/register' element={<Register />} />
+//         <Route path='/setting' element={<Setting />} />
+//         <Route path='/write' element={<Write />} />
+//         {/* <Route>
+//         {user ? (<Route path='/write' element={<Write/>} />) : (<Route path='/register' element={<Register/>} />)}
+//         </Route> */}
+//         <Route path='/login' element={<Login />} />
+//         {/* {user ? (<Route index element={<Home/>}/>) : (<Route path='/login' element={<Login/>} />) } */}
+//         <Route path='/login'>
+//         {user ? <Route index element={<Home/>} /> : <Route path='/login' element={<Login/>} />}
+//         </Route>
+//         <Route path='/post/:id' element={<Single />} />
+//       </Route>
+//     )
+//   )
+  
+
+//   return (
+//     <RouterProvider router={routers} />
+//   );
+// }
+
+
 function App() {
+  const { user } = useContext(Context);
 
-  const {user} = useContext(Context);
-  
   const routers = createBrowserRouter(
-
     createRoutesFromElements(
-      <Route path='/' element={<Topbar />}>
-        <Route index element={<Home />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/setting' element={<Setting />} />
-        <Route path='/write' element={<Write />} />
-        {/* <Route>
-        {user ? (<Route path='/write' element={<Write/>} />) : (<Route path='/register' element={<Register/>} />)}
-        </Route> */}
-        <Route path='/login' element={<Login />} />
-        {/* {user ? (<Route index element={<Home/>}/>) : (<Route path='/login' element={<Login/>} />) } */}
-        <Route path='/login'>
-        {user ? <Route index element={<Home/>} /> : <Route path='/login' element={<Login/>} />}
-        </Route>
-        <Route path='/post/:id' element={<Single />} />
-      </Route>
+      <>
+        {/* Redirect to Register if user is not logged in */}
+        <Route path="/" element={user ? <Home /> : <Navigate to="/register" />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+        <Route path="/setting" element={user ? <Setting /> : <Navigate to="/login" />} />
+        <Route path="/write" element={user ? <Write /> : <Navigate to="/login" />} />
+        <Route path="/post/:id" element={<Single />} />
+      </>
     )
-  )
-  
-
-  return (
-    <RouterProvider router={routers} />
   );
+
+  return <RouterProvider router={routers} />;
 }
 
 export default App;

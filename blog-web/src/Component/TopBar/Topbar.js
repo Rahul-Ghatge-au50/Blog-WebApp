@@ -15,7 +15,7 @@ function Topbar() {
         navigate('/login');
     }
 
-    const PF = 'http://localhost:5000/images/';
+    const PF = 'https://blog-webapp-2qd6.onrender.com/images/';
 
     return (
         <>

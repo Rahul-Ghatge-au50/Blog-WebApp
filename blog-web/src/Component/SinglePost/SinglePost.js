@@ -8,7 +8,7 @@ function SinglePost() {
     const location = useLocation();
     const id = location.pathname.split('/')[2];
     const [post, setPost] = useState({});
-    const PF = 'http://localhost:5000/images/'
+    const PF = 'https://blog-webapp-2qd6.onrender.com/images/'
     const { user } = useContext(Context);
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
@@ -22,7 +22,7 @@ function SinglePost() {
         try{
             console.log("id>>>",id)
             const getPost = async () => {
-                const res = await axios.get(`http://localhost:5000/api/posts/${id}`);
+                const res = await axios.get(`https://blog-webapp-2qd6.onrender.com/api/posts/${id}`);
                 console.log('res::: ', res);
                 setPost(res.data);
                 setTitle(res.data.title);
@@ -37,7 +37,7 @@ function SinglePost() {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:5000/api/posts/${post._id}`);
+            await axios.delete(`https://blog-webapp-2qd6.onrender.com/api/posts/${post._id}`);
             window.location.replace('/')
         } catch (err) {
             console.error("Error in handleDelete :",err.message)
@@ -59,13 +59,13 @@ function SinglePost() {
                 data.append("file", file);
                 updateStory.photo = fileName;
                 try {
-                    await axios.post('http://localhost:5000/api/upload/', data)
+                    await axios.post('https://blog-webapp-2qd6.onrender.com/api/upload/', data)
                 } catch (error) {
                     console.error("Error in handleUpdate :",error.message);
                 }
             }
 
-            axios.put(`http://localhost:5000/api/posts/${post._id}`,updateStory);
+            axios.put(`https://blog-webapp-2qd6.onrender.com/api/posts/${post._id}`,updateStory);
             setUpdateMode(false);
             navigate('/');
         }catch(err){

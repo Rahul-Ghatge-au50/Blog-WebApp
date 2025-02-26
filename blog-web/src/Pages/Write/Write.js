@@ -30,12 +30,12 @@ function Write() {
             data.append('file', file);
             newPost.photo = filename;
             try {
-                await axios.post('http://localhost:5000/api/upload', data)
+                await axios.post('https://blog-webapp-2qd6.onrender.com/api/upload', data)
             } catch ( err) {
             }
         }
         try {
-            const res = await axios.post('http://localhost:5000/api/posts/', newPost);
+            const res = await axios.post('https://blog-webapp-2qd6.onrender.com/api/posts/', newPost);
             //console.log(res);
             window.location.replace('/post/' + res.data._id);
         } catch (err) { }

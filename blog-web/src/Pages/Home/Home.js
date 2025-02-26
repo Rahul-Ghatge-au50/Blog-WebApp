@@ -13,7 +13,7 @@ function Home() {
 
   const fetchPost = async () => {
     try{
-      const res = await axios.get(`http://localhost:5000/api/posts/getAllPost/${user._id}`);
+      const res = await axios.get(`https://blog-webapp-2qd6.onrender.com/api/posts/getAllPost/${user._id}`);
       setPost(res.data)
     }catch(error){
       console.error("Error in funtion fetchPost ::",error.message);
@@ -23,7 +23,7 @@ function Home() {
   const searchData = async () => {
     try{
       if(title){
-        const res = await axios.get(`http://localhost:5000/api/posts/getSrotedSer/${title}`);
+        const res = await axios.get(`https://blog-webapp-2qd6.onrender.com/api/posts/getSrotedSer/${title}`);
         setPost(res.data)
       }else{
         fetchPost();

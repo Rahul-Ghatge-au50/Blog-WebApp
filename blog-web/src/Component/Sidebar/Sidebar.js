@@ -16,7 +16,7 @@ function Sidebar() {
 
     const getSingle = async () => {
         try{
-            const res  = await axios.get(`http://localhost:5000/api/user/getSingleUser/${user._id}`)
+            const res  = await axios.get(`https://blog-webapp-2qd6.onrender.com/api/user/getSingleUser/${user._id}`)
             setName(res.data.others.username);
             setDesc(res.data.others.desc)
         }catch(error){
@@ -33,7 +33,7 @@ function Sidebar() {
         if(user._id) getSingle();
     }, [])
 
-    const PF = 'http://localhost:5000/images/'
+    const PF = 'https://blog-webapp-2qd6.onrender.com/images/'
 
     return (
         <>

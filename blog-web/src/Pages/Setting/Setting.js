@@ -19,7 +19,7 @@ export default function Setting() {
 
     const getSingleUser = async () => {
         try{
-            const res = await axios.get(`http://localhost:5000/api/user/getSingleUser/${user._id}`);
+            const res = await axios.get(`https://blog-webapp-2qd6.onrender.com/api/user/getSingleUser/${user._id}`);
 
             if(res.status === 200){
                 setEmail(res.data.others.email);
@@ -53,13 +53,13 @@ export default function Setting() {
             data.append("file", file);
             updateUser.profileImg = fileName;
             try {
-                await axios.post('http://localhost:5000/api/upload/', data)
+                await axios.post('https://blog-webapp-2qd6.onrender.com/api/upload/', data)
             } catch (error) {
                 console.error("Error in handleUpdate :",error.message);
             }
         }
         try {
-            const res = await axios.put(`http://localhost:5000/api/user/${user._id}`, updateUser );
+            const res = await axios.put(`https://blog-webapp-2qd6.onrender.com/api/user/${user._id}`, updateUser );
             dispatch({type:"UPDATE_SUCCESS",payload:res.data.updatedUser});
             setSuccess(true);
 
@@ -82,7 +82,7 @@ export default function Setting() {
             console.log('userValue::: ', userValue);
 
             if(userValue === 'Yes' || userValue === 'yes'){
-                const res = await axios.delete(`http://localhost:5000/api/user/${user._id}`);
+                const res = await axios.delete(`https://blog-webapp-2qd6.onrender.com/api/user/${user._id}`);
                 if(res.status === 200){
                     dispatch({type:"LOGOUT"});
                     navigate('/register');
@@ -93,7 +93,7 @@ export default function Setting() {
         }
     }
 
-    const PF = 'http://localhost:5000/images/'
+    const PF = 'https://blog-webapp-2qd6.onrender.com/images/'
 
     return (
         <>

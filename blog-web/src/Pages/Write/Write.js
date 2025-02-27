@@ -2,12 +2,14 @@ import { useContext, useState } from 'react';
 import './write.css';
 import { Context } from '../../Context/Context';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Write() {
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [file, setFile] = useState(null);
     const { user } = useContext(Context);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,8 +39,11 @@ function Write() {
         try {
             const res = await axios.post('https://blog-webapp-2qd6.onrender.com/api/posts/', newPost);
             //console.log(res);
-            window.location.replace('/post/' + res.data._id);
-        } catch (err) { }
+            // window.location.replace('/post/' + res.data._id);
+            navigate('/post/')
+        } catch (err) {
+            console.err('Error in the handleSubmit',err.message);
+        }
     }
 
     return (

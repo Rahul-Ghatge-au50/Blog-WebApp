@@ -39,8 +39,8 @@ function Write() {
         try {
             const res = await axios.post('https://blog-webapp-2qd6.onrender.com/api/posts/', newPost);
             //console.log(res);
-            // window.location.replace('/post/' + res.data._id);
-            navigate('/post/')
+            window.location.replace('/post/' + res.data._id);
+            // navigate('/post/')
         } catch (err) {
             console.err('Error in the handleSubmit',err.message);
         }

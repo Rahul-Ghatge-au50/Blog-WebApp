@@ -41,7 +41,11 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
 
 
 //MIDDLEWARE
-app.use(cors());
+app.use(cors({
+    origin: 'https://blog-webapp-1-vhgj.onrender.com', // Replace with your frontend URL
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: true,
+  }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/images', express.static(path.join(__dirname, "/images")))

@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './singlepost.css';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, Link, useNavigate,useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Context } from '../../Context/Context';
 
 function SinglePost() {
     const location = useLocation();
-    const id = location.pathname.split('/')[2];
+    // const id = location.pathname.split('/')[2];
+    const { id } = useParams();
+    console.log("Extracted Post ID:", id);
     const [post, setPost] = useState({});
     const PF = 'https://blog-webapp-2qd6.onrender.com/images/'
     const { user } = useContext(Context);

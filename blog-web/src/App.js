@@ -34,7 +34,7 @@ function App() {
         <Route path="/login" element={user ? <Navigate to="/" /> :<><Topbar /><Login /></>} />
         <Route path="/setting" element={user ?<><Topbar /><Setting /></> : <Navigate to="/login" />} />
         <Route path="/write" element={user ?<><Topbar /><Write /></>: <Navigate to="/login" />} />
-        <Route path="/post/:id" element={<><Topbar /><Single /></>} />
+        <Route path="/post/:id" element={<Single />} />
       </>
     )
   );
